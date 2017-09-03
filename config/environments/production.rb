@@ -62,17 +62,17 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "OJT_#{Rails.env}"
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_caching = false
-  config.action_mailer.default_url_options = { host: 'gmail.com' }
+  config.action_mailer.default_url_options = { host: 'ojt-challange.herokuapp.com' }
   config.action_mailer.delivery_method = :test
   config.action_mailer.perform_deliveries = true
-  #config.action_mailer.smtp_settings = {
-  #  address:              'smtp.gmail.com',
-  #  port:                 587,
-  #  domain:               'gmail.com',
-  #  user_name:            'pawanman56@gmail.com',
-  #  password:             'pawansunuwar56',
-  #  authentication:       'plain'
-  #}
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.gmail.com',
+    port:                 587,
+    domain:               'gmail.com',
+    user_name:            'pawanman56@gmail.com',
+    password:             'pawansunuwar56',
+    authentication:       'plain'
+  }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
