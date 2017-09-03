@@ -1,0 +1,79 @@
+@import "master.scss";
+@media screen and (max-width: 991px) {
+    .user-details {
+        padding: 0 !important;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .user-details {
+        h2 {
+            font-size: 25px !important;
+        }
+        h3 {
+            font-size: 18px !important;
+            margin-top: 0 !important;
+        }
+    }
+}
+
+.user-posts {
+    border: 1px solid $light-grey-2;
+    border-radius: 5px;
+    background-color: #ffffff;
+    p.no-post {
+        padding-top: 55px;
+        padding-bottom: 50px;
+        text-align: center;
+        font-size: 18px;
+    }
+}
+
+.all-users {
+    border: 1px solid $light-grey-2;
+    border-radius: 5px;
+    background-color: #ffffff;
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+}
+
+.update-profile {
+    margin-top: 35px;
+    margin-bottom: 35px;
+    border: 1px solid $light-grey-2;
+    border-radius: 5px;
+    background-color: #ffffff;
+    h1 {
+        text-align: center;
+    }
+    form {
+        padding: 0 15px;
+        label {
+            width: 100%;
+            abbr {
+                display: none;
+            }
+        }
+        input {
+            width: 100%;
+            height: 35px;
+            background-color: $light-grey;
+            border: 0;
+            margin-bottom: 15px;
+            padding: 0 15px;
+        }
+        input.btn {
+            background-color: $indigo-lighten-3;
+            color: #ffffff;
+        }
+        input.btn:hover {
+            background-color: $indigo-lighten-1;
+            transition: 0.2s ease-in-out;
+        }
+    }
+    p {
+        padding: 0 15px;
+    }
+}

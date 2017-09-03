@@ -1,0 +1,41 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+$primary-font: 'Roboto',
+sans-serif;
+$secondary-font: 'Abril Fatface',
+cursive;
+$light-grey: #eaeaea;
+$light-grey-2: #d3d3d3;
+$light-grey-1: #e3e3e3;
+$dark-grey-2: #a9a9a9;
+$indigo-lighten-1: #5c6bc0;
+$indigo-lighten-3: #9fa8da;
+body {
+    background-color: #fafafa;
+    font-family: $primary-font;
+}
+
+.navbar-brand {
+    font-family: $secondary-font;
+}
+
+footer {
+    bottom: 0;
+    margin-top: 24px;
+    padding: 24px;
+    background-color: $light-grey-1;
+    width: 100%;
+    text-align: center;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+.no-margin {
+    margin: 0 !important;
+}
+
+.pd-tp-5 {
+    padding-top: 5px !important;
+}

@@ -1,0 +1,13 @@
+<div class="col-sm-12">
+  <div class="all-users col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+    <h1>All users</h1>
+
+    <ul class="users">
+      <% @users.each do |user| %>
+        <li>
+          <%= link_to user.name, user %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

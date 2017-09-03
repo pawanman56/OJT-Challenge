@@ -1,0 +1,52 @@
+<% @posts.each do |post| %>
+  <div class="article col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
+    <div class="row">  
+      <div class="user-details col-sm-12">
+        <div class="username col-sm-6 no-padding">
+          <%= post.user.name %>
+        </div>
+        <div class="posted-date text-right col-sm-6 no-padding">
+          <%= time_ago_in_words(post.created_at) %> ago
+        </div>
+      </div>
+    </div>
+    
+    <div class="post col-sm-12 no-padding">
+      <h3><%= post.title %></h3>
+      <div class="description col-sm-12">
+        <%= post.description %>
+      </div>
+    </div>
+
+    <div class="options col-sm-12 no-padding pd-tp-5">
+      <% if post.user == current_user %>
+        <%= link_to 'Edit Post', edit_post_path(post.id) %>
+        <span>|</span>
+        <%= link_to 'Delete Post', post_path(post.id), method: :delete %>
+      <% end %>
+    </div>
+
+    <br>
+
+    <div class="comments col-sm-12 no-padding">
+      <h4>Comments</h4>
+      <% post.comments.each do |comment| %>
+        <%= link_to User.find(comment.user_id).name, user_path(User.find(comment.user_id)) %>: 
+        <%= comment.text %>
+        <% if comment.user == current_user %>
+          <%= link_to 'Delete', comment_path(post_id: post.id, id: comment.id), class: 'delete-cmt', method: :delete %>
+        <% end %>
+        <br>
+      <% end %>
+    </div>
+
+    <div class="comment-form col-sm-12 no-padding">
+      <% if logged_in? %>
+        <%= simple_form_for Comment.new, url: post_comments_path(post), method: :post do |f| %>
+          <%= f.input :text, placeholder: "Add your comment" %>
+          <%= f.submit 'Post' %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,10 @@
+<h1>Welcome to OJT-Challange</h1>
+
+<p>
+  Hi <%= @user.name %>.
+  Thank you for joining OJT-Challange.
+
+  To activate your account click on the link below:
+
+  <%= link_to "Activate", edit_account_activation_url(id: @activation_token, email: @user.email) %>
+</p>

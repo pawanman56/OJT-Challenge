@@ -1,0 +1,15 @@
+<li id="post-<%= post.id %>">
+  <h3><%= post.title %></h3>
+  <%= post.description %><br>
+  <span>
+    Posted <%= time_ago_in_words(post.created_at) %> ago.
+  </span><br>
+  <% post.comments.each do |comment| %>
+    <%= link_to User.find(comment.user_id).name %>: 
+    <%= comment.text %>
+    <% if comment.user == current_user %>
+      <%= link_to 'Delete', comment_path(post_id: post.id, id: comment.id), method: :delete %>
+    <% end %>
+    <br>
+  <% end %>
+</li>

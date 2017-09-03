@@ -1,0 +1,16 @@
+<h1>Sign Up</h1>
+
+<div class="col-md-6 col-md-offset-3">
+  <div class="row">
+    <%= simple_form_for @user do |f| %>
+      <%= f.input :name %>
+      <%= f.input :email, placeholder: "e.g. ojt123@domain.com" %>
+      <%= f.input :password %>
+      <%= f.input :password_confirmation, label: "Confirmation", placeholder: "Re-type your password" %>
+
+      <%= f.button :submit, "Create My Account"%>
+    <% end %>
+
+    <p>Already a member? <%= link_to "Login", login_path %></p>
+  </div>
+</div>
