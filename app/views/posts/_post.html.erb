@@ -4,6 +4,13 @@
   <span>
     Posted <%= time_ago_in_words(post.created_at) %> ago.
   </span><br>
+  <div class="options col-sm-12 no-padding pd-tp-5 pull-right">
+    <% if post.user == current_user %>
+      <%= link_to 'Edit Post', edit_post_path(post.id) %>
+      <span>|</span>
+      <%= link_to 'Delete Post', post_path(post.id), method: :delete %>
+    <% end %>
+  </div>
   <% post.comments.each do |comment| %>
     <%= link_to User.find(comment.user_id).name %>: 
     <%= comment.text %>
